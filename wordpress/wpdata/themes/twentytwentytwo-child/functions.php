@@ -9,6 +9,14 @@
  * @since Twenty Twenty-Two 1.0
  */
 
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Main Menu',
+		'menu_title' => 'Main Menu',
+		'show_in_graphql' => true,
+		'icon_url' => 'dashicons-menu',
+	));
+}
 
 if ( ! function_exists( 'twentytwentytwo_support' ) ) :
 
