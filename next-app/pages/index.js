@@ -6,10 +6,9 @@ import { mapMainMenuItems } from "utils/mapMainMenuItems";
 import { MainMenu } from "components/MainMenu";
 
 export default function Home(props) {
-  console.log(props)
   return (<>
-  <MainMenu items={props.mainMenuItems}/>
-  <BlockRenderer blocks={props.blocks} />
+    <MainMenu items={props.mainMenuItems} />
+    <BlockRenderer blocks={props.blocks} />
   </>);
 }
 
