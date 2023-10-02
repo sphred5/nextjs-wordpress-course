@@ -5,6 +5,7 @@ import { Columns } from '../Columns/Columns'
 import { Column } from '../Column/Column'
 import { Paragraph } from '../Paragraph/Paragraph'
 import { CallToActionButton } from '../CallToActionButton/CallToActionButton'
+import { PropertySearch } from '../PropertySearch/PropertySearch'
 import { theme } from 'theme'
 
 export const BlockRenderer = ({blocks}) => {
@@ -26,6 +27,7 @@ export const BlockRenderer = ({blocks}) => {
                     textColor={theme[block.attributes.textColor] || block.attributes.style?.color?.text}
                     />
         }
+        case 'core/post-title':
         case 'core/heading': {
           return <Heading 
                     key={block.id} 
@@ -61,6 +63,9 @@ export const BlockRenderer = ({blocks}) => {
                   width={block.attributes.width} 
                   alt={block.attributes.alt || ""}
                   />
+        }
+        case 'acf/propertysearch': {
+          return <PropertySearch key={block.id} />
         }
         default: 
             console.log("UNKNOWN", block)

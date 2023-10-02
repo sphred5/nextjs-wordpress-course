@@ -14,6 +14,7 @@ add_action('acf/init', 'acf_init_block_types');
 function acf_init_block_types() {
 	if (function_exists('register_block_type')){
 		register_block_type(get_template_directory() . '/template-parts/blocks/ctaButton/block.json');
+		register_block_type(get_template_directory() . '/template-parts/blocks/propertySearch/block.json');
 	}
 }
 
