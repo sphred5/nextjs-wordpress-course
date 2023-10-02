@@ -9,6 +9,14 @@
  * @since Twenty Twenty-Two 1.0
  */
 
+add_action('acf/init', 'acf_init_block_types');
+
+function acf_init_block_types() {
+	if (function_exists('register_block_type')){
+		register_block_type(get_template_directory() . '/template-parts/blocks/ctaButton/block.json');
+	}
+}
+
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
 		'page_title' => 'Main Menu',
