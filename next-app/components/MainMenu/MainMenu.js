@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { FaHouseUser, FaHeart } from 'react-icons/fa'
-
-export const MainMenu = ({ items }) => {
-  console.log("ITEMS", items);
+import { ButtonLink } from '../ButtonLink/ButtonLink'
+export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
   return (
     <div className="bg-slate-800 text-white px-5 h-[64px] sticky top-0 z-20 flex">
       <div className="py-4 pl-5 flex text-pink-600">
@@ -20,7 +19,7 @@ export const MainMenu = ({ items }) => {
             {!!item.subMenuItems?.length && (
               <div className="group-hover:block hidden bg-slate-800 text-right absolute right-0 top-full -mt-3">
                 {item.subMenuItems.map((subMenuItem) => (
-                  <Link key={subMenuItem.id} href={subMenuItem.destination}>
+                  <Link className='block whitespace-nowrap p-5 hover:bg-slate-700' key={subMenuItem.id} href={subMenuItem.destination}>
                     {subMenuItem.label}
                   </Link>
                 ))}
@@ -28,6 +27,12 @@ export const MainMenu = ({ items }) => {
             )}
           </div>
         ))}
+        <div className='ml-3 my-auto'>
+          <ButtonLink 
+            destination={callToActionDestination} 
+            label={callToActionLabel} 
+          /> 
+        </div>
       </div>
     </div>
   )
