@@ -9,6 +9,7 @@ export const Results = ({ properties }) => {
                         title={property.title}
                         destination={property.uri}
                         bedrooms={property.propertyFeatures.bedrooms}
+                        bathrooms={property.propertyFeatures.bathrooms}
                         price={property.propertyFeatures.price}
                         hasParking={property.propertyFeatures.hasParking}
                         petFriendly={property.propertyFeatures.petFriendly}
